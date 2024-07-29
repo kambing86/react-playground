@@ -7,18 +7,26 @@
     "check": "biome check --write",
     "dev": "rsbuild dev --open",
     "format": "biome format --write",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.51.15",
+    "graphql": "^16.9.0",
+    "graphql-request": "^7.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/typescript-operations": "^4.2.3",
+    "@graphql-codegen/typescript-react-query": "^6.1.0",
+    "@parcel/watcher": "^2.4.1",
     "@rsbuild/core": "1.0.1-beta.6",
     "@rsbuild/plugin-react": "1.0.1-beta.6",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "typescript": "^5.5.2"
+    "typescript": "^5.5.4"
   }
 }
