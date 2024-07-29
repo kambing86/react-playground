@@ -1,0 +1,15 @@
+// bad practice
+// :global {
+//   .content {
+//     color: black !important;
+//   }
+// }
+
+// CSS modules
+.title {
+  background: red;
+}
+
+.content {
+  background: yellow;
+}
