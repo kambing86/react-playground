@@ -1,6 +1,9 @@
-import './App.css';
-import { client } from './data/starwars/client';
+import AddTodo from './components/AddTodo';
+import TodoList from './components/TodoList';
 import { useAllFilmsQuery } from './data/gql/starwars';
+import { client } from './data/starwars/client';
+
+import './App.css';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -12,6 +15,8 @@ const App = () => {
         Start building amazing things with Rsbuild.
       </p>
       <div>My content</div>
+      <TodoList />
+      <AddTodo />
     </div>
   );
 };
