@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { v7 as uuid } from 'uuid';
 
 import { EventType, eventBus } from '@/utils/event';
-import Button from '../buttons/Button';
+import Button from '@/components/buttons/Button';
 
 const AddTodo = () => {
   const [todo, setTodo] = useState<string>('');

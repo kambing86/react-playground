@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { v7 as uuid } from 'uuid';
 
 import { useTodos } from '@/hooks/todos';
-import Button from '../buttons/Button';
+import Button from '@/components/buttons/Button';
 
 const AddTodo = () => {
   const [_, setTodos] = useTodos();
