@@ -1,4 +1,5 @@
 import type { QueryFunctionContext } from '@tanstack/react-query';
+import { stripIgnoredCharacters } from 'graphql';
 import { GraphQLClient } from 'graphql-request';
 
 const endpoint = 'https://swapi-graphql.netlify.app/.netlify/functions/index';
@@ -15,7 +16,7 @@ export const customFetcher = <
   return async (context?: QueryFunctionContext) => {
     const signal = context?.signal;
     return client.request<TData>({
-      document: query,
+      document: stripIgnoredCharacters(query),
       variables,
       requestHeaders,
       signal,
