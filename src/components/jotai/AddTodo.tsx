@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { v7 as uuid } from 'uuid';
 
+import { useTodos } from '@/hooks/todos';
+import Button from '../buttons/Button';
+
 const AddTodo = () => {
   const [_, setTodos] = useTodos();
   const [todo, setTodo] = useState('');
@@ -11,8 +14,9 @@ const AddTodo = () => {
       }}
     >
       <input value={todo} onChange={(event) => setTodo(event.target.value)} />
-      <button
+      <Button
         type="submit"
+        variant="success"
         onClick={() => {
           setTodos((prev) => [
             ...prev,
@@ -25,10 +29,9 @@ const AddTodo = () => {
         }}
       >
         Add
-      </button>
+      </Button>
     </form>
   );
 };
-import { useTodos } from '@/hooks/todos';
 
 export default AddTodo;

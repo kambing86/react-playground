@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { v7 as uuid } from 'uuid';
 
 import { EventType, eventBus } from '@/utils/event';
+import Button from '../buttons/Button';
 
 const AddTodo = () => {
   const [todo, setTodo] = useState<string>('');
@@ -12,8 +13,9 @@ const AddTodo = () => {
       }}
     >
       <input value={todo} onChange={(event) => setTodo(event.target.value)} />
-      <button
+      <Button
         type="submit"
+        variant="success"
         onClick={() => {
           eventBus.dispatch(EventType.ADD_TODO, {
             id: uuid(),
@@ -23,7 +25,7 @@ const AddTodo = () => {
         }}
       >
         Add
-      </button>
+      </Button>
     </form>
   );
 };

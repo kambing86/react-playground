@@ -1,10 +1,12 @@
+import { useState } from 'react';
+
+import Button from './components/buttons/Button';
 import TodoAppUsingEventBus from './components/event-bus/TodoAppUsingEventBus';
 import TodoAppUsingJotai from './components/jotai/TodoAppUsingJotai';
 import { useAllFilmsQuery } from './data/starwars/generated';
 
 import './App.css';
 import styles from './App.module.scss';
-import { useState } from 'react';
 
 const App = () => {
   const { data } = useAllFilmsQuery();
@@ -16,21 +18,23 @@ const App = () => {
       <p className={styles.content}>
         Start building amazing things with Rsbuild.
       </p>
-      <div>My content</div>
-      {/* {ary.map((key) => (
+      {ary.map((key) => (
         <TodoAppUsingEventBus key={key} />
       ))}
       {ary.map((key) => (
         <TodoAppUsingJotai key={key} />
       ))}
-      <button
-        type="button"
-        onClick={() => {
-          setAry((prev) => [...prev, prev.length]);
-        }}
-      >
-        Add new app
-      </button> */}
+      <div>
+        <Button
+          type="button"
+          variant="info"
+          onClick={() => {
+            setAry((prev) => [...prev, prev.length]);
+          }}
+        >
+          Add new app
+        </Button>
+      </div>
     </div>
   );
 };
