@@ -6,10 +6,14 @@ import { EventType, eventBus } from '@/utils/event';
 const AddTodo = () => {
   const [todo, setTodo] = useState<string>('');
   return (
-    <div>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+      }}
+    >
       <input value={todo} onChange={(event) => setTodo(event.target.value)} />
       <button
-        type="button"
+        type="submit"
         onClick={() => {
           eventBus.dispatch(EventType.ADD_TODO, {
             id: uuid(),
@@ -20,7 +24,7 @@ const AddTodo = () => {
       >
         Add
       </button>
-    </div>
+    </form>
   );
 };
 
