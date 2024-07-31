@@ -8,10 +8,13 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
 }
 
-const Button = ({ variant, children, ...props }: Props) => {
+const Button = ({ className, variant, children, ...props }: Props) => {
   return (
     <button
-      className={clsx(variant == null ? styles.normalButton : styles[variant])}
+      className={clsx(
+        variant == null ? styles.normalButton : styles[variant],
+        className,
+      )}
       {...props}
     >
       {children}
